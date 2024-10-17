@@ -1,22 +1,23 @@
-import { Board } from '../Board';
-import { Block } from '../Block';
-import { Direction, Pattern, Color } from '../Util';
+import { Board } from "../Board";
+import { Block } from "../Block";
+import { Direction, Pattern, Color } from "../Util";
 
-describe('Board', () => {
+describe("Board", () => {
     let board: Board;
 
     beforeEach(() => {
         board = new Board();
     });
 
-    it('should place first block correctly', () => {
-
+    it("should add a block at a specific position", () => {
         const block = new Block(Pattern.Lion, Color.Red);
-     
-        board.addBlockAtPosition(block, 0,0);
-    
+        const x = 0;
+        const y = 0;
 
-        const result = board.Blocks.length === 1 && board.Blocks[0] === block;
-        expect(result).toBe(true);
+        board.addBlockAtPosition(block, x, y);
+
+        expect(board.getBlockAtPosition(x, y)).toBe(block);
     });
+
+  
 });
