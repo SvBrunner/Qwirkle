@@ -1,11 +1,3 @@
-export enum Direction {
-    Left,
-    Right,
-    Up,
-    Down
-}
-
-
 export enum Pattern {
     Lion, 
     Elephant,
